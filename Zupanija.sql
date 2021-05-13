@@ -93,4 +93,4 @@ where id_naselje=6;
 update naselje set naziv='Sarvaš'
 where id_naselje =7;
 
-
+delete from opcina where id_opcina>6;
