@@ -25,3 +25,7 @@ create table naselje (
 	opcina int not null,
 	naziv varchar (50) not null
 );
+
+alter table zupanija add foreign key (zupan) references zupan (id_zupan);
+alter table opcina add foreign key (zupanija) references zupanija (id_zupanija);
+alter table naselje add foreign key (opcina) references opcina (id_opcina);
