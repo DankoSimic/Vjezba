@@ -44,20 +44,27 @@ insert into zupanija (naziv,zupan) values
 ('Brodsko-posavska',3)
 ;
 
-# id_opcina 1 - 6
+# id_opcina 1 - 8
 insert into opcina (naziv,zupanija) values
 ('Grad Osijek',1),
 ('Antunovac',1),
 ('Grad Vukovar',2),
 ('Cerna',2),
 ('Okučani',3),
-('Velika Kopanica',3)
+('Velika Kopanica',3),
+('Big Digging',3),
+('Little Shovel',3)
 ;
 
-# id_naselje 1 - 12
+# id_naselje 1 - 17
 insert into naselje (naziv,opcina) values
 ('Brijest',1),
 ('Briješće',1),
+('Bezvezarija',1),
+('Nigdjezemlje',1),
+('Manjak Parikinga',1),
+('Alamo',1),
+('Random#5',1),
 ('Antunovac',2),
 ('Ivanovac',2),
 ('Mitnica',3),
@@ -70,5 +77,20 @@ insert into naselje (naziv,opcina) values
 ('Velika Kopanica',6)
 ;
 
+# izmjena unosa u naselje id 3-7 odnosno zamjena bezveznih podataka s stvarnim
+update naselje set naziv='Josipovac'
+where id_naselje=3;
+
+update naselje set naziv='Klisa'
+where id_naselje=4;
+
+update naselje set naziv='Nemetin'
+where id_naselje=5;
+
+update naselje set naziv='Podravlje'
+where id_naselje=6;
+
+update naselje set naziv='Sarvaš'
+where id_naselje =7;
 
 
