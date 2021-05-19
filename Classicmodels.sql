@@ -54,3 +54,22 @@ select * from products where productName like 'D%';
 
 select * from products where productName like '%Dodge%';
 
+# Ubacivanje M1 Abramsa i brisanje istoga
+
+select * from productlines;
+
+insert into productlines (productLine,textDescription) values 
+('Armored Personel Carriers','For safe journey in dangerous neighbourhoods'),
+('Tanks','Sometimes you need a bit more protection than APC');
+
+insert into products (productCode, productName, productLine, productScale, productVendor, productDescription, quantityInStock, buyPrice, MSRP) values
+('S91_1920','M1 Abrams','Tanks','1:20','Classic Metal Creations','Relatively large replica of M1 Abrams Tank, ammunition not included',4000,500.99,125.21);
+
+select * from products where productName='M1 Abrams';
+
+delete from products where productCode='S91_1920';
+delete from productlines where productLine='Armored Personel Carriers';
+delete from productlines where productLine='Tanks';
+
+
+
