@@ -153,3 +153,59 @@ where b.sestra is null
 ;
 
 # Time 52:24
+
+# Par inserta da vidim jel ovo bilo dobro
+
+insert into punac (hlace) values ('plave');
+insert into cura (novcica,ogrlica,gustoca) values (1,25,12);
+insert into cura (novcica,ogrlica,gustoca) values (2,19,11);
+insert into cura (novcica,ogrlica,gustoca) values (3,29,10);
+
+select * from punac;
+select * from cura;
+
+# ponovljena naredba iz zadatka
+# sve stima
+
+update cura set gustoca=15.77;
+
+select * from zena;
+
+update zena set hlace='karirana' where sifra=1;
+
+# ponovljena naredba iz zadatka
+# sve stima
+
+select kratkamajica from zena where hlace like '%ana%';
+
+select * from sestra;
+
+update zena set hlace='atrofirane' where sifra=2;
+update sestra set haljina='bahata' where sifra=1;
+
+select * from svekar;
+
+update svekar set dukserica='crna' where sifra=1;
+update svekar set dukserica='siva' where sifra=2;
+update svekar set dukserica='plava' where sifra=3; 
+
+select * from muskarac;
+select * from mladic;
+
+insert into mladic (suknja,kuna,asocijalno,ekstroventno,dukserica,muskarac) values
+('plava',100.15,0,1,'crna',1),
+('crna',120.25,1,0,'plava',2),
+('zuta',150.75,1,1,'crvena',3)
+;
+
+# ponovljena naredba iz zadatka s inner joinom
+# dobio podatke van tako da ovo stima
+
+select a.dukserica, f.asocijalno, e.hlace 
+from svekar a inner join sestra_svekar b on a.sifra=b.svekar 
+inner join sestra c on c.sifra=b.sestra 
+inner join zena d on c.sifra=d.sestra 
+inner join muskarac e on d.sifra=e.zena 
+inner join mladic f on e.sifra=f.muskarac 
+where d.hlace like 'A%' and c.haljina like '%ba%'
+;
